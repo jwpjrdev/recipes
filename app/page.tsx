@@ -4,7 +4,7 @@ import { allRecipes } from 'contentlayer/generated';
 export default async function HomePage() {
   return (
     <section>
-      <h1 className="font-bold text-3xl font-serif mb-5">Recipes</h1>
+      <h1 className="font-bold text-3xl font-serif mb-5">Josh's Recipes</h1>
       {allRecipes
         .sort((a, b) => {
           if (a.title < b.title) {

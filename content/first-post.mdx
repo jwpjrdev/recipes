@@ -53,12 +53,6 @@ Neon's solution is [particularly interesting](https://neon.tech/blog/serverless-
 
 > The basic premise is simple: our driver redirects the PostgreSQL wire protocol via a special proxy. Our driver connects from the edge function to the proxy over a WebSocket, telling the proxy which database host and port it wants to reach. The proxy opens a TCP connection to that host and port and relays traffic in both directions.
 
-<Image
-  alt={`Neon architecture diagram for connection pooling`}
-  src={`/images/backend/neon.png`}
-  width={1600}
-  height={840}
-/>
 
 <Callout emoji="💡">
 
