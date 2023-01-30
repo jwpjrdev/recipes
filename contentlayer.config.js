@@ -10,19 +10,10 @@ const computedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.flattenedPath,
   },
-  tweetIds: {
-    type: 'array',
-    resolve: (doc) => {
-      const tweetMatches = doc.body.raw.match(
-        /<StaticTweet\sid="[0-9]+"\s\/>/g
-      );
-      return tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]) || [];
-    },
-  },
 };
 
-export const Blog = defineDocumentType(() => ({
-  name: 'Blog',
+export const Recipe = defineDocumentType(() => ({
+  name: 'Recipe',
   filePathPattern: `**/*.mdx`,
   contentType: 'mdx',
   fields: {
@@ -30,16 +21,9 @@ export const Blog = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    publishedAt: {
-      type: 'string',
-      required: true,
-    },
     summary: {
       type: 'string',
       required: true,
-    },
-    image: {
-      type: 'string',
     },
   },
   computedFields,
@@ -47,7 +31,7 @@ export const Blog = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Blog],
+  documentTypes: [Recipe],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
