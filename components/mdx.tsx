@@ -20,10 +20,10 @@ const CustomLink = (props) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
-function Callout(props) {
+function Tip(props) {
   return (
     <div className="flex bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 my-8">
-      <div className="flex items-center w-4 mr-4">{props.emoji}</div>
+      <div className="flex items-center w-4 mr-4">💡</div>
       <div className="w-full callout">{props.children}</div>
     </div>
   );
@@ -31,7 +31,7 @@ function Callout(props) {
 
 const components = {
   a: CustomLink,
-  Callout,
+  Tip,
 };
 
 interface MdxProps {

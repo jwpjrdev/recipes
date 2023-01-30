@@ -9,7 +9,6 @@ export default async function Head({ params }) {
   return (
     <>
       <title>{`Josh's Recipes - ${recipe.title}`}</title>
-      <meta content={recipe.summary} name="description" />
     </>
   );
 }

@@ -21,10 +21,6 @@ export const Recipe = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    summary: {
-      type: 'string',
-      required: true,
-    },
   },
   computedFields,
 }));
