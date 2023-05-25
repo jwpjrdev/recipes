@@ -3,12 +3,10 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { halfValue, multiplyValue } from 'utils/quantity';
 import Fraction from 'fraction.js';
 
 function CustomLink(props) {
   const href = props.href;
-
   if (href.startsWith('/')) {
     return (
       <Link href={href} {...props}>
@@ -26,18 +24,13 @@ function CustomLink(props) {
 
 // TODO: handle things like '1 cups'
 function AdjustValue(props) {
-  if (props.multiplier == 1/2) {
+  if (props.multiplier == 1) {
+    return props.children;
+  } else if (props.multiplier == 1/2) {
     return new Fraction(props.children).div(2).toFraction(true);
   } else {
     return new Fraction(props.children).mul(parseFloat(props.multiplier)).toFraction(true);
   }
-  // return <>{new Fraction(props.children).mul(1).toFraction(true)}</>;
-  // let fraction = new Fraction(props.children);
-  // if (props.multiplier == 1/2) {
-  //   return halfValue(props.children);
-  // } else {
-  //   return multiplyValue(props.children, props.multiplier);
-  // }
 }
 
 function Tip(props) {
