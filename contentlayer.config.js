@@ -21,6 +21,15 @@ export const Recipe = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
+    // only 'ingredient' requires halvable
+    category: {
+      type: 'string',
+      required: true,
+    },
+    halvable: {
+      type: 'boolean',
+      default: false,
+    }
   },
   computedFields,
 }));
