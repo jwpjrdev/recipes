@@ -7,3 +7,5 @@
     - typos
 - light/dark mode toggle
 - info/tips accordion
+- ingredients check marks
+- halve pumpkin bread recipe because it makes 2 loaves (update instructions too)
