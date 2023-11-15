@@ -1,0 +1,9 @@
+- printing support
+    - hide header
+    - decrease font size
+- more recipes
+- categories
+- consistency between recipes
+    - typos
+- light/dark mode toggle
+- info/tips accordion
