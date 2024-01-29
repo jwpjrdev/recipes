@@ -9,3 +9,5 @@
 - info/tips accordion
 - ingredients check marks
 - halve pumpkin bread recipe because it makes 2 loaves (update instructions too)
+    - just halve the recipe and only allow doubling on up.. default to double. make single redirect to double
+- either metric <-> imperial toggle or metric (g) alongside important imperial measurements for convenience like flour and sugar
