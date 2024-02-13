@@ -49,6 +49,12 @@ export default async function Recipe({ params, searchParams }) {
       break;
   }
 
+  // TODO: rewrite this terrible system
+  // this is a temporary workaround for a cookie recipe that can be made into bars
+  if (recipe.title == "Lemon Glaze Cookies") {
+    halvable = false;
+  }
+
   return (
     <section>
       <ContentHolder recipe={recipe} quantity={quantity} halvable={halvable} />
