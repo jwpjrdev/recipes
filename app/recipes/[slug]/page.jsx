@@ -44,6 +44,7 @@ export default async function Recipe({ params, searchParams }) {
     case "pie":
     case "muffins":
     case "brownies":
+    case "other":
     default:
       halvable = false;
       break;
