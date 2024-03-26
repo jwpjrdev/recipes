@@ -46,7 +46,7 @@ export default async function HomePage() {
           return 0;
         }).map(category => (
           <div className="w-full flex flex-col">
-            <div className="mb-14">
+            <div className="mb-6 md:mb-10">
               <h1 className="font-bold text-2xl mb-3">{recipesCategories[category]}</h1>
               {recipes.get(category).map(recipe => (
                 <Link
