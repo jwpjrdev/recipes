@@ -48,7 +48,15 @@ export default async function HomePage() {
           <div className="w-full flex flex-col">
             <div className="mb-6 md:mb-10">
               <h1 className="font-bold text-2xl mb-3">{recipesCategories[category]}</h1>
-              {recipes.get(category).map(recipe => (
+              {recipes.get(category).sort((a, b) => {
+                if (a.title < b.title) {
+                  return -1;
+                }
+                if (a.title > b.title) {
+                  return 1;
+                }
+                return 0;
+              }).map(recipe => (
                 <Link
                   key={recipe.slug}
                   className="flex flex-col space-y-1 mb-3"
