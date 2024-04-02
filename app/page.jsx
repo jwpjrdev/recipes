@@ -2,11 +2,12 @@ import Link from 'next/link';
 import { allRecipes } from 'contentlayer/generated';
 
 export default async function HomePage() {
-
   let recipesCategories = {
     "bread": "Quick Breads",
     "brownies": "Brownies",
+    "cake": "Cakes",
     "cookies": "Cookies",
+    "cupcakes": "Cupcakes",
     "pie": "Pies",
     "muffins": "Muffins",
     "ingredient": "Ingredients",
