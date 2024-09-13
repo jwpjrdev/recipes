@@ -1,7 +1,7 @@
 export default {
   title: {
-    default: 'Josh\'s Recipes',
-    template: 'Josh\'s Recipes - %s',
+    default: 'Josh Price',
+    template: 'Josh Price - %s',
   },
   icons: {
     shortcut: '/favicon.ico',

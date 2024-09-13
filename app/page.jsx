@@ -28,80 +28,87 @@ export default async function HomePage() {
     }
   }
 
+  // return (
+  //   <section>
+  //     <h1 className="font-bold text-3xl tfont-serif mb-4">Josh's Recipes</h1>
+  //     <div className="h-[0.2em] bg-neutral-50 dark:bg-neutral-800 mb-10" />
+
+  //     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+  //       {[...recipes.keys()].sort((a, b) => {
+  //         // display names
+  //         let a2 = recipesCategories[a];
+  //         let b2 = recipesCategories[b];
+  //         if (a2 < b2) {
+  //           return -1;
+  //         }
+  //         if (a2 > b2) {
+  //           return 1;
+  //         }
+  //         return 0;
+  //       }).map(category => (
+  //         <div className="w-full flex flex-col">
+  //           <div className="mb-6 md:mb-10">
+  //             <h1 className="font-bold text-2xl mb-3">{recipesCategories[category]}</h1>
+  //             {recipes.get(category).sort((a, b) => {
+  //               if (a.title < b.title) {
+  //                 return -1;
+  //               }
+  //               if (a.title > b.title) {
+  //                 return 1;
+  //               }
+  //               return 0;
+  //             }).map(recipe => (
+  //               <Link
+  //                 key={recipe.slug}
+  //                 className="flex flex-col space-y-1 mb-3"
+  //                 href={`/recipes/${recipe.slug}`}
+  //               >
+  //                 <div className="w-full flex flex-col">
+  //                   <p>{recipe.title}</p>
+  //                 </div>
+  //               </Link>
+  //             ))}
+  //           </div>
+  //         </div>
+  //       ))}
+  //       {/* <p className="text-lg">{recipe.title}</p> */}
+
+  //       {/* <div className="mb-14">
+  //         <h1 className="font-bold text-2xl mb-3">Cookies</h1>
+
+  //         <p className="text-lg">Chocolate Chip Cookies</p>
+  //         <p className="text-lg">test</p>
+  //         <p className="text-lg">test</p>
+  //       </div> */}
+  //     </div>
+  //     {/* {allRecipes
+  //       .sort((a, b) => {
+  //         if (a.title < b.title) {
+  //           return -1;
+  //         }
+  //         if (a.title > b.title) {
+  //           return 1;
+  //         }
+  //         return 0;
+  //       })
+  //       .map((recipe) => (
+  //         <Link
+  //           key={recipe.slug}
+  //           className="flex flex-col space-y-1 mb-4"
+  //           href={`/recipes/${recipe.slug}`}
+  //         >
+  //           <div className="w-full flex flex-col">
+  //             <p>{recipe.title} {recipe.category}</p>
+  //           </div>
+  //         </Link>
+  //       ))} */}
+  //   </section>
+  // );
   return (
     <section>
-      <h1 className="font-bold text-3xl tfont-serif mb-4">Josh's Recipes</h1>
+      <h1 className="font-bold text-3xl tfont-serif mb-4">Under Construction</h1>
       <div className="h-[0.2em] bg-neutral-50 dark:bg-neutral-800 mb-10" />
-
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-        {[...recipes.keys()].sort((a, b) => {
-          // display names
-          let a2 = recipesCategories[a];
-          let b2 = recipesCategories[b];
-          if (a2 < b2) {
-            return -1;
-          }
-          if (a2 > b2) {
-            return 1;
-          }
-          return 0;
-        }).map(category => (
-          <div className="w-full flex flex-col">
-            <div className="mb-6 md:mb-10">
-              <h1 className="font-bold text-2xl mb-3">{recipesCategories[category]}</h1>
-              {recipes.get(category).sort((a, b) => {
-                if (a.title < b.title) {
-                  return -1;
-                }
-                if (a.title > b.title) {
-                  return 1;
-                }
-                return 0;
-              }).map(recipe => (
-                <Link
-                  key={recipe.slug}
-                  className="flex flex-col space-y-1 mb-3"
-                  href={`/recipes/${recipe.slug}`}
-                >
-                  <div className="w-full flex flex-col">
-                    <p>{recipe.title}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        ))}
-        {/* <p className="text-lg">{recipe.title}</p> */}
-
-        {/* <div className="mb-14">
-          <h1 className="font-bold text-2xl mb-3">Cookies</h1>
-
-          <p className="text-lg">Chocolate Chip Cookies</p>
-          <p className="text-lg">test</p>
-          <p className="text-lg">test</p>
-        </div> */}
-      </div>
-      {/* {allRecipes
-        .sort((a, b) => {
-          if (a.title < b.title) {
-            return -1;
-          }
-          if (a.title > b.title) {
-            return 1;
-          }
-          return 0;
-        })
-        .map((recipe) => (
-          <Link
-            key={recipe.slug}
-            className="flex flex-col space-y-1 mb-4"
-            href={`/recipes/${recipe.slug}`}
-          >
-            <div className="w-full flex flex-col">
-              <p>{recipe.title} {recipe.category}</p>
-            </div>
-          </Link>
-        ))} */}
+      <p className="text-lg">This site is under construction. You can reach me at <a href='mailto:josh@jwpjr.dev'>josh@jwpjr.dev</a>.</p>
     </section>
   );
 }
