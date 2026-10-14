@@ -4,7 +4,7 @@ import { allRecipes } from 'contentlayer/generated';
 export default async function HomePage() {
   let recipesCategories = {
     "bread": "Quick Breads",
-    "brownies": "Brownies",
+    "brownies-bars": "Brownies & Bars",
     "cake": "Cakes",
     "cookies": "Cookies",
     "cupcakes": "Cupcakes",
