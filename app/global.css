@@ -248,6 +248,7 @@ table {
   .recipe-controls,
   .recipe-controls svg,
   .theme-toggle,
+  .prose .anchor,
   [data-vercel-analytics],
   nextjs-portal {
     display: none !important;
