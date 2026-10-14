@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer utilities {
   .debug {
@@ -13,7 +14,7 @@
 }
 
 html {
-  min-width: 360px;
+  min-width: 320px;
 }
 
 .prose .anchor {
@@ -67,6 +68,41 @@ html {
   margin-bottom: 1.25em !important;
 }
 
+.prose > .recipe-mode-concise > .recipe-ingredients:first-child,
+.prose > .recipe-mode-detailed > .recipe-ingredients:first-child {
+  margin-bottom: 1.25em !important;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 899px) {
+  .prose > .recipe-mode-concise > .recipe-ingredients,
+  .prose > .recipe-mode-detailed > .recipe-ingredients {
+    margin-bottom: 0 !important;
+  }
+
+  .prose .recipe-ingredients > h2,
+  .prose .recipe-instructions > h2 {
+    margin-top: 0.5em !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .recipe-controls-divider {
+    margin-inline: 0.25rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .recipe-controls {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  .recipe-controls-divider {
+    display: none;
+  }
+}
+
 code[class*='language-'],
 pre[class*='language-'] {
   @apply text-neutral-50;
@@ -105,6 +141,30 @@ table {
   margin: 0 !important;
 }
 
+.prose .recipe-mode-concise .recipe-instructions > h2 {
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+.prose .recipe-mode-concise .recipe-instructions > ol {
+  margin-top: 1.5em !important;
+}
+
+@media (max-width: 899px) {
+  .prose .recipe-mode-concise .recipe-instructions > h2 {
+    margin-top: 0.5em !important;
+  }
+}
+
+.prose > section[class^='recipe-mode-'] {
+  display: none;
+}
+
+.prose.recipe-mode-concise > .recipe-mode-concise,
+.prose.recipe-mode-detailed > .recipe-mode-detailed {
+  display: contents;
+}
+
 [data-rehype-pretty-code-fragment] code {
   @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
   counter-reset: line;
@@ -136,4 +196,143 @@ table {
 }
 [data-rehype-pretty-code-title] + pre {
   @apply mt-0 rounded-t-none border-t-0;
+}
+
+@page {
+  size: letter portrait;
+  margin: 0.5in;
+}
+
+.print-title-suffix {
+  display: none;
+}
+
+@media print {
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  html,
+  body,
+  main {
+    color: #000 !important;
+    color-scheme: light;
+    background-color: #fff !important;
+  }
+
+  .prose,
+  .prose * {
+    color: #000 !important;
+  }
+
+  body {
+    display: block;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+  }
+
+  main {
+    margin: 0;
+    padding: 0.15in;
+  }
+
+  main > section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .recipe-home-link,
+  .recipe-controls,
+  .recipe-controls svg,
+  .theme-toggle,
+  [data-vercel-analytics],
+  nextjs-portal {
+    display: none !important;
+  }
+
+  .print-title-suffix {
+    display: inline;
+  }
+
+  .tip-icon {
+    display: none !important;
+  }
+
+  .prose .tip-callout {
+    display: inline-block;
+    width: fit-content;
+    max-width: min(100%, 65ch);
+    margin: 0 !important;
+    padding: 0.4rem 0.2rem 0.4rem 0.6rem;
+    border-color: #999 !important;
+    background: transparent !important;
+  }
+
+  .prose .tip-callout .callout {
+    width: fit-content;
+    max-width: min(100%, 65ch);
+    padding: 0;
+  }
+
+  .prose .tip-callout .callout p {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .prose .callout p {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  h1 {
+    grid-column: 1;
+    width: fit-content;
+    margin: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  main > section > article {
+    grid-column: 1 / -1;
+  }
+
+  .prose {
+    grid-column: 1 / -1;
+    max-width: none;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    column-gap: 0.25in;
+    row-gap: 0;
+    font-size: 9pt;
+    line-height: 1.25;
+  }
+
+  .prose .recipe-ingredients,
+  .prose .recipe-instructions {
+    margin: 0 !important;
+  }
+
+  .prose h2,
+  .prose h3 {
+    break-after: avoid;
+  }
+
+  .prose h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .prose h3 {
+    margin-top: 0.6rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .prose li {
+    break-inside: avoid;
+  }
+
+  .prose li::marker {
+    color: #000 !important;
+  }
 }

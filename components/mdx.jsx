@@ -22,38 +22,35 @@ function CustomLink(props) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
-// TODO: handle things like '1 cups'
 function AdjustValue(props) {
-  if (props.multiplier == 1) {
+  if (props.multiplier === 1) {
     return props.children;
-  } else if (props.multiplier == 1/2) {
-    return new Fraction(props.children).div(2).toFraction(true);
-  } else {
-    return new Fraction(props.children).mul(parseFloat(props.multiplier)).toFraction(true);
   }
+
+  return new Fraction(props.children)
+    .mul(props.multiplier)
+    .toFraction(true);
 }
 
 function Tip(props) {
   return (
-    <div className="flex bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 my-8">
-      <div className="flex items-center w-4 mr-4">💡</div>
+    <div className="tip-callout flex bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 my-4">
+      <div className="tip-icon flex items-center w-4 mr-4">💡</div>
       <div className="w-full callout">{props.children}</div>
     </div>
   );
 }
 
-export function Mdx({ code, quantity }) {
+export function Mdx({ code, quantity, mode }) {
   const Component = useMDXComponent(code);
 
   return (
-    <>
-      <article className="prose prose-quoteless prose-neutral dark:prose-invert max-w-none">
-        <Component components={{ 
-          a: CustomLink,
-          code: (props) => <AdjustValue multiplier={quantity} {...props} />,
-          Tip,
-         }} />
-      </article>
-    </>
+    <article className={`prose prose-quoteless prose-neutral dark:prose-invert grid grid-cols-1 gap-y-4 max-w-none min-[900px]:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] min-[900px]:gap-x-8 min-[900px]:gap-y-0 recipe-mode-${mode}`}>
+      <Component components={{
+        a: CustomLink,
+        code: (props) => <AdjustValue multiplier={quantity} {...props} />,
+        Tip,
+      }} />
+    </article>
   );
 }

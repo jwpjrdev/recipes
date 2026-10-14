@@ -12,6 +12,7 @@
       "jsx": "preserve",
       "paths": {
         "components/*": ["./components/*"],
+        "lib/*": ["./lib/*"],
         "contentlayer/generated": ["./.contentlayer/generated"]
       },
       "incremental": true,
