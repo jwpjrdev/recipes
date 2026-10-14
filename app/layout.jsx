@@ -1,6 +1,6 @@
 import './global.css';
 import clsx from 'clsx';
-import localFont from '@next/font/local';
+import localFont from "next/font/local";
 import globalMetadata from './metadata';
 import Providers from './providers';
 import { Analytics } from '@vercel/analytics/react';

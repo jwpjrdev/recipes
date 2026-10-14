@@ -12,3 +12,4 @@
     - just halve the recipe and only allow doubling on up.. default to double. make single redirect to double
 - either metric <-> imperial toggle or metric (g) alongside important imperial measurements for convenience like flour and sugar
 - show quantities in instructions as well as ingredients so you don't have to scroll so much
+- fix page titles for recipes not showing recipe name

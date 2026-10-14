@@ -8,7 +8,7 @@ export default async function Head({ params }) {
 
   return (
     <>
-      <title>{`Josh Price - ${recipe.title}`}</title>
+      <title>{`Recipes - ${recipe.title}`}</title>
     </>
   );
 }

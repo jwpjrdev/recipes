@@ -33,7 +33,7 @@ export default async function HomePage() {
       <h1 className="font-bold text-3xl tfont-serif mb-4">Josh's Recipes</h1>
       <div className="h-[0.2em] bg-neutral-50 dark:bg-neutral-800 mb-10" />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-6">
         {[...recipes.keys()].sort((a, b) => {
           // display names
           let a2 = recipesCategories[a];
@@ -46,7 +46,7 @@ export default async function HomePage() {
           }
           return 0;
         }).map(category => (
-          <div className="w-full flex flex-col">
+          <div key={category} className="w-full flex flex-col">
             <div className="mb-6 md:mb-10">
               <h1 className="font-bold text-2xl mb-3">{recipesCategories[category]}</h1>
               {recipes.get(category).sort((a, b) => {

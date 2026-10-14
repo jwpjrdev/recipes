@@ -8,7 +8,7 @@ export async function generateMetadata({ params }) {
     title: postTitle,
     slug,
   } = post;
-  const title = `Josh Price - ${postTitle}`;
+  const title = `Recipes - ${postTitle}`;
 
   return {
     title,
