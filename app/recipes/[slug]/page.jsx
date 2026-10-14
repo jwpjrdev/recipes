@@ -9,7 +9,9 @@ export async function generateStaticParams() {
 }
 
 export default async function Recipe({ params, searchParams }) {
-  const recipe = allRecipes.find((post) => post.slug === params.slug);
+  const { slug } = await params;
+  const resolvedSearchParams = await searchParams;
+  const recipe = allRecipes.find((post) => post.slug === slug);
 
   if (!recipe) {
     notFound();
@@ -17,7 +19,7 @@ export default async function Recipe({ params, searchParams }) {
 
   // options: half, single, double, triple, quadruple.
   // if it's not one of those, use single.
-  let quantity = searchParams.quantity || "single";
+  let quantity = resolvedSearchParams.quantity || "single";
   switch (quantity) {
     case "half":
     case "single":

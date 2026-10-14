@@ -7,29 +7,29 @@
     "start": "next start"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.0.1",
-    "@vercel/edge-config": "^0.1.1",
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/global-config": "^1.5.1",
     "clsx": "^1.2.1",
-    "contentlayer": "^0.3.0",
-    "fraction.js": "^4.2.0",
-    "next": "13.5.1",
-    "next-contentlayer": "^0.3.0",
+    "contentlayer": "0.3.4",
+    "fraction.js": "^4.3.7",
+    "next": "13.5.11",
+    "next-contentlayer": "0.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-wrap-balancer": "^0.4.0",
+    "react-wrap-balancer": "^0.4.1",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-pretty-code": "^0.9.2",
+    "rehype-pretty-code": "0.14.5",
     "rehype-slug": "^5.1.0",
-    "remark-gfm": "^3.0.1",
-    "shiki": "^0.13.0",
-    "use-query-params": "^2.2.1"
+    "remark-gfm": "^4.0.1",
+    "shiki": "^1.29.2",
+    "use-query-params": "^2.2.2"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^13.4.3",
-    "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.13",
-    "cross-env": "^7.0.3",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4"
+    "@next/bundle-analyzer": "^13.5.11",
+    "@tailwindcss/typography": "^0.5.20",
+    "autoprefixer": "^10.6.1",
+    "cross-env": "^10.1.0",
+    "postcss": "^8.5.30",
+    "@tailwindcss/postcss": "^4.3.3"
   }
 }

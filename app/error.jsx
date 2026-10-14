@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Balancer from 'react-wrap-balancer';
 
 export default function Error({ error, reset }) {
 	useEffect(() => {
